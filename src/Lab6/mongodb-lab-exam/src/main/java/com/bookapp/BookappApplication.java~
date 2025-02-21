@@ -1,0 +1,25 @@
+package com.bookapp;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.repository.MongoRepository;
+
+
+@SpringBootApplication
+public class BookappApplication implements CommandLineRunner {
+
+	@Autowired
+	private MongoTemplate mongoTemplate;
+
+	public static void main(String[] args) {
+		SpringApplication.run(BookappApplication.class, args);
+	}
+
+	@Override
+	public void run(String... args) throws Exception {
+		mongoTemplate.save(new User)
+	}
+}
