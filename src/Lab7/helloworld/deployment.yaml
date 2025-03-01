@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-world-application
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: hello-world-application
+  template:
+    metadata:
+      labels:
+        app: hello-world-application
+    spec:
+      containers:
+        - name: hello-world-application
+          image: 692859932788.dkr.ecr.ap-south-1.amazonaws.com/hello_world_application:latest
+          ports:
+            - containerPort: 8080
